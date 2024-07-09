@@ -1,0 +1,13 @@
+// A full adder combinational logic unit 
+module fa (
+    output s,
+    output cout,
+    input a,
+    input b,
+    input cin
+) {
+    always {
+        s = a ^ b ^ cin;
+        cout = (a & b) + (a & cin) + (b & cin);
+    }
+}

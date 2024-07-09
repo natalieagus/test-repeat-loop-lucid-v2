@@ -1,0 +1,30 @@
+testBench playground {
+    sig clk
+
+fun tickClock(times[32]) {
+    repeat(times) {
+        clk = 1
+        $tick()
+        clk = 0
+        $tick()
+    }
+}
+
+    test myTest {
+        // test goes here
+        $print("v1 Loop backwards");
+        repeat(i, 3, 3, -1){
+             $print("i = %d, i-1 = %d", i, i-1)
+        }
+        $print("v2 Loop upwards");
+        repeat(i, 3, 0){
+            $print("i+1 = %d, i = %d", i+1, i)
+        }
+        $print("v3 Loop upwards");
+         repeat(i, 3, 1){
+            $print("i = %d, i-1 = %d", i, i-1)
+        }
+        
+        // $tickClock(20)
+    }
+}
