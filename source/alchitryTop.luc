@@ -19,7 +19,7 @@ module alchitryTop (
         resetConditioner resetCond
     }
     
-    const SIZE = 4;
+    const SIZE = 3;
     rca rca(#SIZE(SIZE));
     always {
         resetCond.in = ~rst_n  // input raw inverted reset signal

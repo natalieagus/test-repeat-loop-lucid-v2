@@ -16,24 +16,27 @@ module rca #(
         fa.cin[0] = cin;
         
         // version 1
- //        repeat(i, SIZE-1, 0){
- //           fa.cin[i+1] = fa.cout[i];
-  //      }
+        // sum output is not correct except for when SIZE is 3
+ //       repeat(i, SIZE-1, 0){
+ //          fa.cin[i+1] = fa.cout[i];
+ //       }
         
         
-        // version 2
-        repeat(i, SIZE-1, SIZE-1, -1){
-            fa.cin[i] = fa.cout[i-1];
-       }
+        // version 2, error when SIZE is 3, OK otherwise
+        // sum output is not correct 
+ //      repeat(i, SIZE-1, SIZE-1, -1){
+ //           fa.cin[i] = fa.cout[i-1];
+ //     }
 
         
-        // version 3
-      //  repeat(i, SIZE-1, 1){
-     //       fa.cin[i] = fa.cout[i-1];
-     //   }
+        // version 3, error when SIZE is 3, OK otherwise
+        // sum output is not correct
+//        repeat(i, SIZE-1, 1){
+//            fa.cin[i] = fa.cout[i-1];
+//        }
               
-        // plain connection works 
-        // fa.cin[SIZE-1:1] = fa.cout[SIZE-2:0]
+        // plain connection works consistently
+        fa.cin[SIZE-1:1] = fa.cout[SIZE-2:0]
         
         cout = fa.cout[SIZE-1];
         s = fa.s;
