@@ -72,7 +72,7 @@ We try to replace each `fa`'s `cin, cout` connection with a `repeat` loop, and c
 
 Here's the observed behavior:
 - **version 1**:  works in simulation correctly for all values of `SIZE` > 2. This behaves the same as plain connection above. 
-- **version 2**: if I set `SIZE` as 3, the following error shows. There's no error with **other** `SIZE` value e.g: `2,4,5,6...`. However, simulation shows the **wrong** output,  e.g: 1+1 does not give 2, but gives 10. 
+- **version 2**: if I set `SIZE` as 3 (in `alchitryTop.luc`), the following error shows. There's no error with **other** `SIZE` value e.g: `2,4,5,6...`. However, simulation shows the **wrong** output,  e.g: 1+1 does not give 2, but gives 10. 
 <img width="778" alt="image" src="https://github.com/alchitry/Alchitry-Labs-V2/assets/5848920/4a0f7059-b851-46b7-86f9-2da8a59fe8eb">
 
 - **version 3**:  same behavior as **version 2**
